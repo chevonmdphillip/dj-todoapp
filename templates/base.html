@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="{%  static 'css/completed.css' %}">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Todo App</title>
+
+</head>
+<body>
+  <nav class="light-blue darken-4">
+      <div class="container">
+    <div class="nav-wrapper">
+      <a  class="brand-logo" href="{% url 'home' %}">Todo</a>
+    </div>
+      </div>
+  </nav>
+  <div class="container">
+{% block content %}
+
+{% endblock %}
+  </div>
+
+
+          <div class="footer-copyright">
+            <div class="container  centered">
+            Made with <span style="color: #e25555;">&#9829;</span> by <a href="https://twitter.com/chevonphillip" target="_blank">@ChevonPhillip</a>
+            </div>
+          </div>
+
+  <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
