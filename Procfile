@@ -1,2 +1,2 @@
 web: gunicorn deployment.wsgi
-web: gunicorn todoApp:app --preload
+web: gunicorn todoApp:todo_list --preload
