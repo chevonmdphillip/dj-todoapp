@@ -27,6 +27,7 @@
             <th>Item</th>
             <th>Data Created</th>
             <th>Mark As Completed</th>
+            <th>Edit</th>
             <th>Delete</th>
         </tr>
         </thead>
@@ -34,18 +35,20 @@
      {% if all_items %}
         {% for todo in all_items %}
             {% if todo.completed %}
-                <tr class="striker grey lighten-2">
-                    <td>{{ todo.item }}</td>
-                    <td>{{ todo.date }}</td>
-                    <td><button class="waves-effect waves-light btn green darken-1" type="submit"><i class="material-icons">check_circle</i></button></td>
-                <td><a href="{% url 'delete' todo.id %}" class="waves-effect waves-light btn red darken-1"><i class="material-icons">delete</i></a></td>
+                <tr class="grey lighten-2">
+                    <td class="striker">{{ todo.item }}</td>
+                    <td class="striker">{{ todo.date }}</td>
+                    <td><a href="{%  url 'uncross' todo.id %}" class="waves-effect waves-light btn green darken-1" type="submit"><i class="material-icons">check_circle</i></a></td>
+                    <td><a href="{% url 'edit' todo.id %}" class="waves-effect waves-light btn yellow darken-1"><i class="material-icons">create</i></a></td>
+                    <td><a href="{% url 'delete' todo.id %}" class="waves-effect waves-light btn red darken-1"><i class="material-icons">delete</i></a></td>
                 </tr>
             {% else %}
                <tr>
                     <td>{{ todo.item }}</td>
                     <td>{{ todo.date }}</td>
-                    <td><button class="waves-effect waves-light btn green darken-1" type="submit"><i class="material-icons">check_circle</i></button></td>
-                <td><a href="{% url 'delete' todo.id %}" class="waves-effect waves-light btn red darken-1"><i class="material-icons">delete</i></a></td>
+                    <td><a href="{%  url 'crossoff' todo.id %}" class="waves-effect waves-light btn green darken-1" type="submit"><i class="material-icons">check_circle</i></a></td>
+                   <td><a href="{% url 'edit' todo.id %}" class="waves-effect waves-light btn yellow darken-1"><i class="material-icons">create</i></a></td>
+                    <td><a href="{% url 'delete' todo.id %}" class="waves-effect waves-light btn red darken-1"><i class="material-icons">delete</i></a></td>
                 </tr>
             {% endif %}
         {% endfor %}

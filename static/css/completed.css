@@ -1,6 +1,6 @@
-.striker {
-    text-decoration: line-through;
-}
+  .striker {
+      text-decoration: line-through;
+  }
 
   body {
     display: flex;
